@@ -1,0 +1,25 @@
+/* =============================================================
+   index.css
+   Einstiegspunkt des Projekts.
+   Importiert global.css (Variablen, Reset) als erstes,
+   damit alle CSS-Custom-Properties in allen Komponenten
+   verfügbar sind.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   1. GLOBALE BASIS
+   Muss als Erstes importiert werden — definiert :root-Variablen,
+   Farben, Typografie-Tokens und den CSS-Reset.
+--------------------------------------------------------------- */
+@import './styles/global.css';
+
+/* ---------------------------------------------------------------
+   2. HINWEIS
+   Komponenten-spezifische CSS-Dateien (Navbar.css,
+   HeroSection.css, CTABanner.css, Footer.css und mehr...) werden
+   entweder direkt in den jeweiligen JSX-Komponenten
+   importiert ODER zentral in Startseite.css gebündelt.
+
+   Dieses index.css kümmert sich ausschließlich um die
+   globale Basis — kein weiterer Komponent-CSS hier.
+--------------------------------------------------------------- */

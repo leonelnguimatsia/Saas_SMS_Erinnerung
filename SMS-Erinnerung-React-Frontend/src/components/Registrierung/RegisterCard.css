@@ -1,0 +1,329 @@
+/* =============================================================
+     RegisterCard.css
+     Stile für die Registrierungs-Karte: Social-Buttons,
+     Name-Felder, Email, Passwort, Passwort-Confirm,
+     AGB-Checkbox, Erstellen-Button und Anmelden-Zeile.
+     ============================================================= */
+
+/* ---------------------------------------------------------------
+     1. REGISTER-CARD WRAPPER
+  --------------------------------------------------------------- */
+.register-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: var(--spacing-2xl); /* 24px */
+
+  width: 520px;
+
+  background: var(--color-bg-white);
+  border: var(--border);
+  border-radius: var(--radius-md);
+}
+
+/* ---------------------------------------------------------------
+     2. TEXTE
+  --------------------------------------------------------------- */
+.register-card__brand {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.register-card__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-heading);
+}
+
+/* ---------------------------------------------------------------
+     3. SOCIAL BUTTONS (Google + Yahoo)
+  --------------------------------------------------------------- */
+.register-card__btn-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--spacing-lg); /* 16px */
+  gap: var(--spacing-md); /* 12px */
+
+  width: 100%;
+  height: 56px;
+
+  background: var(--color-bg-white);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-body);
+
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.register-card__btn-social:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.register-card__btn-social:active {
+  transform: scale(0.97);
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+/* ---------------------------------------------------------------
+     4. DIVIDER "oder"
+  --------------------------------------------------------------- */
+.register-card__divider {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md); /* 12px */
+
+  width: 100%;
+}
+
+.register-card__divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.register-card__divider-text {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------------
+     5. NAME-ZEILE (Vorname + Nachname nebeneinander)
+  --------------------------------------------------------------- */
+.register-card__name-zeile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-lg); /* 16px */
+
+  width: 100%;
+}
+
+.register-card__name-gruppe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm); /* 8px */
+
+  flex: 1;
+}
+
+/* ---------------------------------------------------------------
+     6. INPUT-FELDER (Email, Passwort, Passwort-Confirm)
+  --------------------------------------------------------------- */
+.register-card__field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-xs); /* 4px */
+
+  width: 100%;
+}
+
+.register-card__label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text-body);
+}
+
+.register-card__input {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-lg); /* 16px */
+
+  width: 100%;
+  height: 48px;
+
+  background: var(--color-bg-white);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-body);
+}
+
+.register-card__required {
+  color: var(--color-danger); /* #dc2626 */
+  margin-left: var(--spacing-xs); /* 4px */
+  cursor: help;
+}
+
+.register-card__input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* Passwort-Wrapper mit Eye-Icon */
+.register-card__input-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+
+  width: 100%;
+  height: 48px;
+
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-white);
+}
+
+.register-card__eye-btn {
+  position: absolute;
+  right: var(--spacing-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------------
+     7. AGB-ZEILE
+  --------------------------------------------------------------- */
+.register-card__agb-zeile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-sm); /* 8px */
+
+  width: 100%;
+  height: 48px;
+}
+
+.register-card__checkbox {
+  width: 16px;
+  height: 16px;
+  border: var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.register-card__agb-text {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text-body);
+}
+
+.register-card__agb-link {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------
+     8. ERSTELLEN-BUTTON
+  --------------------------------------------------------------- */
+.register-card__btn-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 48px;
+
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  color: var(--color-bg-white);
+
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.register-card__btn-submit:hover {
+  opacity: 0.88;
+}
+
+.register-card__btn-submit:active {
+  transform: scale(0.97);
+  opacity: 0.75;
+}
+
+/* ---------------------------------------------------------------
+     9. ANMELDEN-ZEILE (bereits ein Konto?)
+  --------------------------------------------------------------- */
+.register-card__anmelden-zeile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xs); /* 4px */
+
+  width: 100%;
+}
+
+.register-card__anmelden-text {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text-body);
+}
+
+.register-card__anmelden-link {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* =============================================================
+   RESPONSIVE — RegisterCard
+   Tablet (≤768px): Kartenbreite flexibel.
+   Mobile (≤480px): Volle Breite, Vorname+Name untereinander.
+   ============================================================= */
+
+/* ------- Tablet ≤ 768px ------- */
+@media (max-width: 768px) {
+  .register-card {
+    width: 90%;
+    max-width: 520px;
+    padding: 24px;
+  }
+}
+
+/* ------- Mobile ≤ 480px ------- */
+@media (max-width: 480px) {
+  .register-card {
+    width: 100%;
+    border-radius: 0;
+    border-left: none; /* Seitenrahmen entfernen für randloses Layout */
+    border-right: none;
+  }
+
+  /* Vorname und Name untereinander statt nebeneinander */
+  .register-card__name-zeile {
+    flex-direction: column;
+  }
+}

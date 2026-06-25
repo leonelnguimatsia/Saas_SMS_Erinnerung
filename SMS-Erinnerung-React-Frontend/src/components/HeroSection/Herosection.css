@@ -1,0 +1,971 @@
+/* =============================================================
+   HeroSection.css
+   Stile für den gesamten Hero-Bereich der Startseite:
+   Badge, H1, Subheadline, CTA-Buttons, Statistiken,
+   Feature-Cards, Steps, Testimonials und Pricing-Cards.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   1. HERO-SECTION WRAPPER
+   Zentrierter vertikaler Container mit weißem Hintergrund.
+--------------------------------------------------------------- */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-7xl) 40px; /* 80px 40px */
+  gap: var(--spacing-2xl); /* 24px */
+
+  width: 100%;
+  background: var(--color-bg-white);
+  border: var(--border);
+}
+
+/* ---------------------------------------------------------------
+   2. BADGE "NEU"
+   Kleine Pill-Badge mit Icon und Hinweistext.
+--------------------------------------------------------------- */
+.badge-new {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 14px;
+  gap: 10px;
+
+  height: 36px;
+
+  background: var(--color-primary-light);
+  border-radius: var(--radius-lg); /* 20px */
+}
+
+.badge-new__icon {
+  width: 24px;
+  height: 24px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.badge-new__text {
+  font-size: var(--font-size-sm); /* 13px */
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-sm); /* 16px */
+  color: var(--color-primary);
+}
+
+/* ---------------------------------------------------------------
+   3. HERO HEADING / H1
+   Großer zentrierter Seitentitel.
+--------------------------------------------------------------- */
+.hero-section__heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  width: 600px;
+}
+
+.hero-section__heading h1 {
+  font-size: var(--font-size-4xl); /* 40px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-4xl); /* 48px */
+  text-align: center;
+  color: var(--color-text-heading);
+}
+
+/* ---------------------------------------------------------------
+   4. SUBHEADLINE
+   Sekundärer Beschreibungstext unterhalb des H1.
+--------------------------------------------------------------- */
+.hero-section__subheadline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  width: 520px;
+}
+
+.hero-section__subheadline p {
+  font-size: var(--font-size-lg); /* 18px */
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xl); /* 22px */
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------------
+   5. HERO CTA-BUTTONGRUPPE
+   "Anmelden" + "Jetzt Registrieren" nebeneinander.
+--------------------------------------------------------------- */
+.hero-cte-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-lg); /* 16px */
+
+  background: var(--color-bg-white);
+}
+
+/* Gemeinsamer Basis-Stil für Hero-Buttons */
+.hero-cte-group__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--spacing-xl);
+
+  height: 48px;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  color: var(--color-bg-white);
+
+  background: var(--color-primary);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.hero-cte-group__btn:hover {
+  opacity: 0.88;
+}
+
+.hero-cte-group__btn:active {
+  transform: scale(0.97);
+  opacity: 0.75;
+}
+
+.hero-cte-group__btn--login {
+  width: 118px;
+}
+.hero-cte-group__btn--register {
+  width: 176px;
+}
+
+/* ---------------------------------------------------------------
+   6. STATISTIK-LEISTE
+   Vier Kennzahlen nebeneinander (2.400+, 98%, 50.000+, -70%).
+--------------------------------------------------------------- */
+.statistik-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-4xl); /* 48px */
+
+  width: 100%;
+  max-width: 1440px; /* ← NEU */
+  margin: 0 auto; /* ← NEU (zentriert die Section) */
+  background: var(--color-bg-white);
+}
+
+.statistik-line__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-xs); /* 4px */
+
+  flex: 1;
+  background: var(--color-bg-white);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.statistik-line__item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.25);
+  border: 2px solid var(--color-primary);
+  z-index: 1;
+}
+
+.statistik-line__value {
+  font-size: var(--font-size-2xl); /* 28px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-2xl); /* 34px */
+  text-align: center;
+  color: #000000;
+}
+
+.statistik-line__label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------------
+   7. HAUPT-SECTION FEATURES
+   Übergeordneter Container der Feature-, Step-, Testimonial-
+   und Pricing-Bereiche.
+--------------------------------------------------------------- */
+.haupt-section-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-7xl); /* 80px */
+  gap: var(--spacing-4xl); /* 48px */
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+/* ---------------------------------------------------------------
+   7a. SECTION FEATURES — Header + Grid
+--------------------------------------------------------------- */
+.section-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-7xl);
+  gap: var(--spacing-4xl);
+
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: var(--color-bg-white);
+}
+
+.features-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm); /* 8px */
+
+  width: 100%;
+}
+
+.features-header__title {
+  font-size: var(--font-size-3xl); /* 32px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-3xl); /* 39px */
+  text-align: center;
+  color: var(--color-text-heading);
+}
+
+.features-header__subtitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* Feature-Karten-Grid: 3 pro Zeile, wrapping */
+.feature-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-xl); /* 20px */
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+/* Einzelne Feature-Karte */
+.card-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-2xl); /* 24px */
+
+  width: 320px;
+  height: 251px;
+
+  background: var(--color-bg-white);
+  border: var(--border);
+  border-radius: var(--radius-md); /* 12px */
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+/* Hover: Karte bewegt sich nach oben */
+.card-feature:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.25);
+  border: 2px solid var(--color-primary);
+  z-index: 1;
+}
+
+/* Icon-Wrapper in der Feature-Karte */
+.card-feature__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  width: 44px;
+  height: 44px;
+
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  opacity: 0.5;
+}
+
+/* Karten-Titel */
+.card-feature__title {
+  padding: var(--spacing-md) 10px;
+  width: 100%;
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-heading);
+}
+
+/* Karten-Beschreibungstext */
+.card-feature__description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------------
+   7b. SECTION STEPS — 4 Schritte horizontal
+--------------------------------------------------------------- */
+.section-steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-7xl);
+  gap: var(--spacing-4xl);
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+.step-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-sm);
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+.step-header__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-3xl);
+  text-align: center;
+  color: var(--color-text-heading);
+}
+
+.step-header__subtitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* Horizontale Schritt-Zeile */
+.steps-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 15px;
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+/* Einzelnes Step-Item */
+.step-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-md); /* 12px */
+
+  /*flex: 1;*/
+  width: 300px;
+  height: 200px;
+
+  background: var(--color-bg-white);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+/* Hover: Karte bewegt sich nach oben */
+.step-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.25);
+  border: 2px solid var(--color-primary);
+  z-index: 1;
+}
+
+/* Nummerierter Kreis */
+.step-item__circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  width: 48px;
+  height: 48px;
+
+  background: var(--color-primary);
+  border-radius: var(--radius-full); /* 999px */
+
+  font-size: var(--font-size-xl); /* 20px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xl);
+  color: var(--color-bg-white);
+}
+
+.step-item__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xl);
+  text-align: center;
+  color: #000000;
+}
+
+.step-item__description {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------------
+   7c. SECTION TESTIMONIALS — 3 Bewertungskarten
+--------------------------------------------------------------- */
+.section-testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-7xl);
+  gap: var(--spacing-4xl);
+
+  width: 100%;
+  max-width: 1440px; /* ← NEU */
+  margin: 0 auto; /* ← NEU (zentriert die Section) */
+  background: var(--color-bg-white);
+  border: var(--border);
+}
+
+.testimonials-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-sm);
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+.testimonials-header__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-3xl);
+  text-align: center;
+  color: var(--color-text-heading);
+}
+
+.testimonials-header__subtitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.testimonials-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* ← statt wrap: Karten bleiben in einer Zeile */
+  overflow-x: auto; /* ← Scrollbar erscheint wenn Karten überlaufen */
+  justify-content: flex-start; /* ← statt center: Scroll startet links */
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-xl); /* 20px */
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+/* Einzelne Testimonial-Karte */
+.card-testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--spacing-2xl); /* 24px */
+  gap: var(--spacing-sm); /* 8px */
+
+  width: 320px;
+  height: 213px;
+  flex-shrink: 0; /* ← NEU: verhindert Schrumpfen bei vollem Row */
+
+  background: var(--color-bg-white);
+  border: var(--border);
+  border-radius: var(--radius-md);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+/* Hover: Karte bewegt sich nach oben */
+.card-testimonial:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.25);
+  border: 2px solid var(--color-primary);
+  z-index: 1;
+}
+
+/* Sterne-Reihe */
+.card-testimonial__stars {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+
+  height: 25px;
+  background: var(--color-bg-white);
+}
+
+.card-testimonial__stars svg {
+  width: 120px;
+  height: 20px;
+  fill: var(--color-warning); /* #F59E0B */
+}
+
+/* Zitat-Text */
+.card-testimonial__quote {
+  font-size: var(--font-size-sm); /* 14px — Designwert aus Figma */
+  font-weight: var(--font-weight-regular);
+  line-height: 17px;
+  color: var(--color-text-body);
+}
+
+/* Autor-Zeile: Avatar + Name + Rolle */
+.card-testimonial__author {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 10px;
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+.card-testimonial__avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  width: 36px;
+  height: 35px;
+
+  background: var(--color-primary-light);
+  border-radius: var(--radius-avatar);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+}
+
+/*für Name und role der Author*/
+.card-testimonial__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 0;
+  flex: 1;
+  background: var(--color-bg-white);
+}
+
+.card-testimonial__name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-heading);
+}
+
+.card-testimonial__role {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xs);
+  color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------------
+   7d. SECTION PRICING — 3 Preis-Karten (Free, Basic, Pro)
+--------------------------------------------------------------- */
+.section-pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-7xl);
+  gap: var(--spacing-4xl);
+
+  width: 100%;
+  max-width: 1440px; /* ← NEU */
+  margin: 0 auto; /* ← NEU (zentriert die Section) */
+  background: var(--color-bg-white);
+  border: var(--border);
+}
+
+.pricing-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: var(--spacing-sm);
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+.pricing-header__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-3xl);
+  text-align: center;
+  color: var(--color-text-heading);
+}
+
+.pricing-header__subtitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* Zeile der drei Preis-Karten */
+.pricing-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  gap: var(--spacing-xl);
+
+  width: 100%;
+  background: var(--color-bg-white);
+}
+
+/* Basis-Stil für alle Pricing-Karten */
+.card-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+  gap: var(--spacing-lg); /* 16px */
+
+  width: 280px;
+
+  background: var(--color-bg-white);
+  border: var(--border);
+  border-radius: var(--radius-md);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card-pricing:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.25);
+  border: 2px solid var(--color-primary);
+  z-index: 1;
+}
+
+/* Hervorgehobene Karte (z. B. "Basic" — empfohlen) */
+.card-pricing--featured {
+  border: 2px solid var(--color-primary);
+}
+
+/* "Empfohlen"-Badge innerhalb der Karte */
+.card-pricing__badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  width: 100px;
+  height: 20px;
+
+  background: var(--color-primary-light);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  color: var(--color-primary);
+}
+
+/* ---------------------------------------------------------------
+   CARD-PRICING — Label-Row (Plan-Name + optionales Badge)
+--------------------------------------------------------------- */
+.card-pricing__label-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  gap: auto;
+
+  width: 100%;
+  max-width: 230px; /* ← NEU */
+  margin: 0 auto; /* ← NEU (zentriert die Section) */
+}
+
+/* Plan-Name (Free / Basic / Pro) */
+.card-pricing__label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  color: var(--color-text-secondary);
+}
+
+/* Preisanzeige: großer Betrag + "/Monat" */
+.card-pricing__price {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.card-pricing__amount {
+  font-size: var(--font-size-4xl); /* 40px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-4xl); /* 48px */
+  color: var(--color-text-heading);
+}
+
+.card-pricing__period {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  color: var(--color-text-secondary);
+  padding-bottom: 4px;
+}
+
+.card-pricing__group-label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* Trennlinie zwischen Preisanzeige und Feature-Liste */
+.card-pricing__divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Feature-Liste mit Häkchen */
+.card-pricing__features {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  gap: var(--spacing-sm);
+
+  background: var(--color-bg-white);
+}
+
+.card-pricing__feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  color: var(--color-text-body);
+}
+
+/* Häkchen-Icon */
+.card-pricing__check {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.card-pricing__check::before {
+  content: '✓';
+}
+
+/* Karten-CTA-Button */
+.card-pricing__cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  width: 100%;
+  height: 48px;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-xl); /* 20px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xl);
+  color: var(--color-bg-white);
+
+  background: var(--color-primary);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.card-pricing__cta:hover {
+  opacity: 0.88;
+}
+
+.card-pricing__cta:active {
+  transform: scale(0.97);
+  opacity: 0.75;
+}
+
+/* ---------------------------------------------------------------
+   RESPONSIVE — Tablets (≤768px) & Mobil (≤480px)
+   Hero, Features, Steps, Pricing: einspaltiges Layout auf Mobil.
+--------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-4xl) 20px;
+  }
+
+  .hero-section__heading {
+    width: 100%;
+  }
+  .hero-section__subheadline {
+    width: 100%;
+  }
+
+  .hero-cte-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cte-group__btn--login,
+  .hero-cte-group__btn--register {
+    width: 100%;
+  }
+
+  .statistik-line {
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+  }
+  .statistik-line__item {
+    width: 45%;
+  }
+
+  .haupt-section-features {
+    padding: var(--spacing-4xl) 20px;
+  }
+  .section-features,
+  .section-steps,
+  .section-testimonials,
+  .section-pricing {
+    padding: var(--spacing-2xl) 16px;
+  }
+
+  .card-feature {
+    width: 100%;
+    height: auto;
+  }
+  .step-item {
+    width: 45%;
+    height: auto;
+  }
+
+  .pricing-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-pricing {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section__heading h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .statistik-line__item {
+    width: 100%;
+  }
+
+  .step-item {
+    width: 100%;
+  }
+}

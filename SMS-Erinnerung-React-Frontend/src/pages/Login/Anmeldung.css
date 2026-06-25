@@ -1,0 +1,24 @@
+/* =============================================================
+   Anmeldung.css
+   Layout-Stile für die Anmeldung-Seite (Login).
+   Zentriert die LoginCard vertikal und horizontal.
+   ============================================================= */
+
+/* LoginCard-Stile einbinden */
+@import '../../components/Anmeldung/LoginCard.css';
+
+/* ---------------------------------------------------------------
+   1. SEITEN-WRAPPER
+   Vollbild-Container, zentriert die LoginCard.
+--------------------------------------------------------------- */
+.anmeldung {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-7xl) 0;
+
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-bg-page);
+}

@@ -1,0 +1,149 @@
+/* =============================================================
+   Navbar.css
+   Stile für die obere Navigationsleiste:
+   Logo, Nav-Links und Nav-Actions (Buttons).
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   1. NAVBAR WRAPPER
+   Horizontale Flex-Leiste, fixiert am oberen Seitenrand.
+--------------------------------------------------------------- */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px var(--spacing-7xl);
+  gap: var(--spacing-3xl);
+
+  width: 100%;
+  height: 80px;
+
+  background: var(--color-bg-white);
+  border-bottom: var(--border);
+}
+
+/* ---------------------------------------------------------------
+   2. LOGO / BRAND-NAME
+   "BindiMarket" in Primärfarbe, mittlere Schriftstärke.
+--------------------------------------------------------------- */
+.navbar__brand {
+  font-size: var(--font-size-2xl); /* 28px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-2xl); /* 34px */
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------
+   3. NAV-LINKS
+   Mittlere Navigation: Funktionen, Preise, Über uns.
+--------------------------------------------------------------- */
+.navbar__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-3xl); /* 32px zwischen Links */
+
+  background: var(--color-bg-white);
+}
+
+.navbar__links a {
+  font-size: var(--font-size-base); /* 16px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base); /* 19px */
+  color: var(--color-text-body);
+  transition: color 0.2s ease;
+}
+
+.navbar__links a:hover {
+  color: var(--color-primary);
+}
+
+/* ---------------------------------------------------------------
+   4. NAV-ACTIONS
+   Rechte Buttongruppe: "Anmelden" + "Kostenlose [Testversion]".
+--------------------------------------------------------------- */
+.navbar__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md); /* 12px zwischen Buttons */
+
+  background: var(--color-bg-white);
+}
+
+/* Basis-Stil für beide Navbar-Buttons */
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--spacing-xl); /* 0 20px */
+
+  height: 48px;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  color: var(--color-bg-white);
+
+  background: var(--color-primary);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.navbar__btn:hover {
+  opacity: 0.88;
+}
+
+.navbar__btn:active {
+  transform: scale(0.97);
+  opacity: 0.75;
+}
+
+/* Schmaler "Anmelden"-Button */
+.navbar__btn--login {
+  width: 118px;
+}
+
+/* Breiter "Kostenlose"-Button */
+.navbar__btn--kostenlose {
+  width: 177px;
+}
+
+/* ---------------------------------------------------------------
+   5. RESPONSIVE — Tablets (≤768px) & Mobil (≤480px)
+   Nav-Links ausblenden auf Tablets; Buttons kleiner auf Mobil.
+--------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+    gap: var(--spacing-md);
+  }
+  .navbar__links {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__btn {
+    height: 40px;
+    padding: 0 var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+  .navbar__btn--login {
+    width: auto;
+  }
+  .navbar__btn--kostenlose {
+    width: auto;
+  }
+}

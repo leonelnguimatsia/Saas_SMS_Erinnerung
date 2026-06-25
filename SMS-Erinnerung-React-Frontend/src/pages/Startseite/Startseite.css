@@ -1,0 +1,52 @@
+/* =============================================================
+   Startseite.css
+   Seiten-spezifische Layout-Stile für die Desktop-Startseite.
+   Importiert alle Komponenten-CSS-Dateien und definiert
+   nur das übergeordnete Seiten-Layout.
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   1. KOMPONENTENIMPORTE
+   Reihenfolge entspricht dem visuellen Aufbau der Seite.
+--------------------------------------------------------------- */
+
+@import '../../components/Navbar/Navbar.css';
+@import '../../components/HeroSection/Herosection.css';
+@import '../../components/CTABanner/CTABanner.css';
+@import '../../components/Footer/Footer.css';
+
+/* ---------------------------------------------------------------
+   2. SEITEN-WRAPPER
+   Äußerster Container der Desktop-Startseite.
+   Alle Sektionen werden vertikal gestapelt.
+--------------------------------------------------------------- */
+.startseite {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--color-bg-page); /* #F8FAFC */
+}
+
+/* ---------------------------------------------------------------
+   3. SECTION-REIHENFOLGE
+   Legt die Stapelreihenfolge der Hauptbereiche fest.
+   (Navbar → Hero → CTA-Banner → Footer)
+--------------------------------------------------------------- */
+.startseite > .navbar {
+  order: 0;
+}
+.startseite > .hero-section {
+  order: 1;
+}
+.startseite > .cta-banner {
+  order: 2;
+}
+.startseite > footer {
+  order: 3;
+}

@@ -1,0 +1,166 @@
+/* =============================================================
+   Modal.css
+   Stile für das Modal-Fenster:
+   Overlay, Modal-Rahmen, Header, Titel, Schließen-Button,
+   Divider, Inhalt (mit Scrollbar).
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   1. OVERLAY
+   Dunkler Hintergrund hinter dem Modal (z-index: 1000).
+--------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* deckt gesamten Viewport ab */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.2); /* halbtransparentes Schwarz */
+  z-index: 1000;
+}
+
+/* ---------------------------------------------------------------
+   2. MODAL FENSTER
+   Weißer Dialog-Container mit abgerundeten Ecken.
+--------------------------------------------------------------- */
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-xl); /* 20px */
+  gap: var(--spacing-2xl); /* 24px */
+
+  width: 520px;
+
+  background: var(--color-bg-white);
+  border-radius: var(--radius-md); /* 12px */
+}
+
+/* ---------------------------------------------------------------
+   3. MODAL HEADER
+   Zeile mit Titel links und Schließen-Button rechts.
+--------------------------------------------------------------- */
+.modal__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm); /* 8px */
+  gap: var(--spacing-sm);
+
+  width: 100%;
+  height: 54px;
+}
+
+/* ---------------------------------------------------------------
+   4. MODAL TITEL
+   Überschrift im Header (z. B. "AGB", "Datenschutz").
+--------------------------------------------------------------- */
+.modal__title {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium); /* 500 */
+  font-size: 28px;
+  line-height: 34px;
+  text-align: left;
+
+  color: var(--color-text-heading); /* #1E293B */
+
+  flex: 1; /* füllt verbleibende Breite */
+}
+
+/* ---------------------------------------------------------------
+   5. SCHLIESSEN-BUTTON
+   Kleines X-Icon oben rechts im Header.
+--------------------------------------------------------------- */
+.modal__close-btn {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-bg-page); /* #F8FAFC */
+  border: var(--border); /* 1px solid #E2E8F0 */
+  border-radius: var(--radius-sm); /* 8px */
+
+  cursor: pointer;
+}
+
+.modal__close-icon {
+  fill: var(--color-danger); /* #DC2626 — rotes X */
+  font-size: 12px;
+}
+
+/* ---------------------------------------------------------------
+   6. DIVIDER
+   Horizontale Trennlinie zwischen Header und Inhalt.
+--------------------------------------------------------------- */
+.modal__divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border); /* #E2E8F0 */
+}
+
+/* ---------------------------------------------------------------
+   7. INHALT
+   Scrollbarer Textbereich für AGB / Datenschutz / etc.
+--------------------------------------------------------------- */
+.modal__content {
+  width: 100%;
+  padding: 0 var(--spacing-sm);
+
+  max-height: 300px; /* feste maximale Höhe */
+  overflow-y: auto; /* Scrollbar nur wenn nötig */
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular); /* 400 */
+  font-size: 18px;
+  line-height: 22px;
+
+  color: var(--color-text-body); /* #334155 */
+}
+
+.modal__content p {
+  margin: 0;
+  min-height: 8px; /* Abstand zwischen leeren Absätzen */
+}
+
+.modal__content ol {
+  padding-left: var(--spacing-lg); /* 16px — Einrückung für Listen */
+}
+
+/* Benutzerdefinierte Scrollbar (webkit-Browser: Chrome, Edge, Safari) */
+.modal__content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal__content::-webkit-scrollbar-track {
+  background: var(--color-bg-page);
+  border-radius: var(--radius-sm);
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.modal__content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary); /* dunkler beim Hovern */
+}
+
+/* ---------------------------------------------------------------
+   8. RESPONSIVE — Tablets (≤768px)
+   Modal-Breite flexibel auf kleineren Bildschirmen.
+--------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .modal {
+    width: 90%; /* fluid statt fixe 520px */
+    max-width: 520px;
+    padding: var(--spacing-lg);
+  }
+}

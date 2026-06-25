@@ -1,0 +1,440 @@
+/* =============================================================
+     NotFound.css
+     404-Fehlerseite — Maße 1:1 aus Figma Code.txt übernommen.
+     ============================================================= */
+
+/* ---------------------------------------------------------------
+     1. SEITEN-WRAPPER
+  --------------------------------------------------------------- */
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--color-bg-page); /* #F8FAFC */
+}
+
+/* ---------------------------------------------------------------
+     2. NAVBAR — nur Logo, kein NavLinks / NavActions
+     Figma: flex row, space-between, center, padding 40px 80px,
+     height 52px, BG White, Border.
+  --------------------------------------------------------------- */
+.notfound__navbar {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px; /* Figma: padding 40px 80px */
+  gap: 32px; /* Figma: gap 32px */
+
+  width: 100%;
+  height: 52px; /* Figma: height 52px */
+
+  background: var(--color-bg-white); /* #FFFFFF */
+  border: var(--border); /* 1px solid #E2E8F0 */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Logo "BindiMarket" — zentriert via margin: 0 auto */
+.notfound__navbar-brand {
+  margin: 0 auto; /* Figma: margin 0 auto → Logo mittig */
+  width: 161px; /* Figma: width 161px */
+  height: 34px; /* Figma: height 34px */
+
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium); /* 500 */
+  font-size: var(--font-size-2xl); /* 28px — Medium-28 */
+  line-height: var(--line-height-2xl); /* 34px */
+
+  color: var(--color-primary); /* #2563EB */
+
+  text-decoration: none;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* ---------------------------------------------------------------
+     3. CONTENT-BEREICH
+     Figma: flex column, center/center, padding 60px 0,
+     gap 24px, height 536px, BG White, Border.
+  --------------------------------------------------------------- */
+.notfound__content {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-5xl) 0; /* 60px 0 */
+  gap: var(--spacing-2xl); /* 24px */
+
+  width: 100%;
+  min-height: 536px;
+
+  background: var(--color-bg-white); /* #FFFFFF */
+  border: var(--border);
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+/* ---------------------------------------------------------------
+     4. ROBOTER-BILD
+     Figma: width 160px, height 166px.
+  --------------------------------------------------------------- */
+.notfound__image {
+  width: 160px;
+  height: 166px;
+  object-fit: contain;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* ---------------------------------------------------------------
+     5. HEADLINE
+     Figma: width 600px, height 34px, Medium-28,
+     text-align center, Text Heading.
+  --------------------------------------------------------------- */
+.notfound__headline {
+  width: 600px;
+  height: 34px;
+
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium); /* 500 */
+  font-size: var(--font-size-2xl); /* 28px */
+  line-height: var(--line-height-2xl); /* 34px */
+  text-align: center;
+
+  color: var(--color-text-heading); /* #1E293B */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* ---------------------------------------------------------------
+     6. BESCHREIBUNGSTEXT
+     Figma: width 440px, height 96px, Medium-400 (20px/24px),
+     text-align center, Text Secondary.
+  --------------------------------------------------------------- */
+.notfound__description {
+  width: 440px;
+  height: 96px;
+
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium); /* 500 */
+  font-size: var(--font-size-xl); /* 20px */
+  line-height: var(--line-height-xl); /* 24px */
+  text-align: center;
+
+  color: var(--color-text-secondary); /* #64748B */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+/* ---------------------------------------------------------------
+     7. BUTTON — Zurück zur Startseite
+     Figma: 226×48px, flex row center, padding 12px 20px, gap 8px,
+     Primary, Border, border-radius 8px.
+  --------------------------------------------------------------- */
+.notfound__btn {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-xl); /* 12px 20px */
+  gap: var(--spacing-sm); /* 8px */
+
+  width: 226px;
+  height: 48px;
+
+  background: var(--color-primary); /* #2563EB */
+  border: var(--border);
+  border-radius: var(--radius-sm); /* 8px */
+
+  text-decoration: none;
+
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
+}
+
+.notfound__btn:hover {
+  opacity: 0.88;
+}
+.notfound__btn:active {
+  transform: scale(0.97);
+  opacity: 0.75;
+}
+
+/* ---------------------------------------------------------------
+     7a. PFEIL-ICON (Arrow-Left-1 + Vector aus Code.txt)
+     Figma: Arrow-Left-1 → width 16px, height 16px
+            Vector → position absolute, left/right/top/bottom 0%,
+                     background: #FFFFFF
+     Umsetzung: CSS-only mit ::before (Pfeilkopf) + ::after (Stiel)
+  --------------------------------------------------------------- */
+.notfound__btn-arrow {
+  position: relative; /* Figma: Arrow-Left-1 */
+  width: 16px;
+  height: 16px;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Pfeil-Stiel — horizontale Linie */
+.notfound__btn-arrow::after {
+  content: '';
+  position: absolute; /* Figma: Vector → position absolute */
+  top: 50%;
+  left: 1px;
+  width: 13px;
+  height: 2px;
+  background: var(--color-bg-white); /* Figma: background #FFFFFF */
+  transform: translateY(-50%);
+}
+
+/* Pfeilkopf — Dreieck nach links */
+.notfound__btn-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid var(--color-bg-white); /* #FFFFFF */
+  border-left: 2px solid var(--color-bg-white); /* #FFFFFF */
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Button-Text */
+.notfound__btn-label {
+  width: 162px; /* Figma: width 162px */
+  height: 19px; /* Figma: height 19px */
+
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-medium); /* 500 — Medium-500 */
+  font-size: var(--font-size-base); /* 16px */
+  line-height: var(--line-height-base); /* 19px */
+
+  color: var(--color-bg-white); /* #FFFFFF */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* ---------------------------------------------------------------
+     8. FOOTER
+     Figma: flex row, space-between, center, padding 20px 80px,
+     height 100px, BG White, Border.
+  --------------------------------------------------------------- */
+.notfound__footer {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xl) var(--spacing-7xl); /* 20px 80px */
+
+  width: 100%;
+  height: 100px;
+
+  background: var(--color-bg-white); /* #FFFFFF */
+  border: var(--border);
+
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Footer-Left: Brand + Copyright */
+.notfound__footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.notfound__footer-brand {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium); /* 500 */
+  font-size: var(--font-size-base); /* 16px */
+  line-height: var(--line-height-base); /* 19px */
+  color: var(--color-text-heading); /* #1E293B */
+}
+
+/* Copyright-Icon + Text */
+.notfound__copyright {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 10px; /* Figma: gap 10px */
+
+  width: 358px; /* Figma: width 358px */
+  height: 19px; /* Figma: height 19px */
+}
+
+.notfound__copyright svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-text-secondary); /* #64748B */
+  flex-shrink: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.notfound__copyright-text {
+  width: 332px; /* Figma: Titel width 332px */
+  height: 19px;
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium); /* 500 — Medium-500 */
+  font-size: var(--font-size-base); /* 16px */
+  line-height: var(--line-height-base); /* 19px */
+  color: var(--color-text-secondary); /* #64748B */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Footer-Right: Impressum, Datenschutz, Kontakt */
+.notfound__footer-right {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px; /* Figma: padding 10px */
+  gap: var(--spacing-7xl); /* 80px — Figma: gap 80px */
+
+  width: 423px; /* Figma: Footer-Right width 423px */
+  height: 39px;
+
+  background: var(--color-bg-white);
+}
+
+.notfound__footer a,
+.notfound__footer-link {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium); /* 500 */
+  font-size: var(--font-size-base); /* 16px */
+  line-height: var(--line-height-base); /* 19px */
+  color: var(--color-text-secondary); /* #64748B */
+
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.notfound__footer-link:hover {
+  color: var(--color-primary);
+}
+
+.notfound__footer-link--impressum {
+  width: 85px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.notfound__footer-link--datenschutz {
+  width: 98px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.notfound__footer-link--kontakt {
+  width: 60px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+/* ---------------------------------------------------------------
+     9. RESPONSIVE
+  --------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .notfound__navbar {
+    padding: 16px 20px;
+  }
+
+  .notfound__headline {
+    width: 90%;
+    height: auto;
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+  }
+
+  .notfound__description {
+    width: 90%;
+    height: auto;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+
+  .notfound__footer {
+    flex-direction: column;
+    height: auto;
+    padding: var(--spacing-xl);
+    gap: var(--spacing-md);
+  }
+
+  .notfound__footer-left {
+    align-items: center;
+  }
+  .notfound__copyright {
+    width: auto;
+    justify-content: center;
+  }
+  .notfound__footer-right {
+    width: auto;
+    gap: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound__btn {
+    width: auto;
+  }
+  .notfound__btn-label {
+    width: auto;
+  }
+
+  .notfound__footer-right {
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+}

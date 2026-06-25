@@ -1,0 +1,24 @@
+/* =============================================================
+   Registrierung.css
+   Layout-Stile für die Registrierung-Seite.
+   Zentriert die RegisterCard vertikal und horizontal.
+   ============================================================= */
+
+/* RegisterCard-Stile einbinden */
+@import '../../components/Registrierung/RegisterCard.css';
+
+/* ---------------------------------------------------------------
+   1. SEITEN-WRAPPER
+   Vollbild-Container, zentriert die RegisterCard.
+--------------------------------------------------------------- */
+.registrieren {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-7xl) 0;
+
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-bg-page);
+}
